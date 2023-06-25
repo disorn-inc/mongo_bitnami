@@ -5,6 +5,7 @@ services:
     image: 'bitnami/mongodb:latest'
     # group_add:
     #  - 1001:1001
+    user: "$UID:$GID"
     environment:
       - MONGODB_USERNAME=my_user
       - MONGODB_PASSWORD=password123
