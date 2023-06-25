@@ -1,26 +1,26 @@
 version: "3.8"
 
 services:
-  # mongodb:
-  #   image: 'bitnami/mongodb:6.0'
-  #   # group_add:
-  #   #  - 1001:1001
-  #   user: "1001:1001"
-  #   environment:
-  #     - MONGODB_USERNAME=my_user
-  #     - MONGODB_PASSWORD=password123
-  #     - MONGODB_REPLICA_SET_MODE=primary
-  #     - MONGODB_ROOT_PASSWORD=password123
-  #     - MONGODB_DATABASE=my_database
-  #     - MONGODB_REPLICA_SET_KEY=replicasetkey123
-  #   ports:
-  #     - '27017:27017'
-  #   volumes:
-  #     - './mongodb_data:/bitnami/mongodb'
   mongodb:
-    image: docker.io/bitnami/mongodb:6.0
+    image: 'bitnami/mongodb:6.0'
+    # group_add:
+    #  - 1001:1001
     user: "0"
+    environment:
+      - MONGODB_USERNAME=my_user
+      - MONGODB_PASSWORD=password123
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_ROOT_PASSWORD=password123
+      - MONGODB_DATABASE=my_database
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
     ports:
-      - "27017:27017"
+      - '27017:27017'
     volumes:
       - './mongodb_data:/bitnami/mongodb'
+  # mongodb:
+  #   image: docker.io/bitnami/mongodb:6.0
+  #   user: "0"
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - './mongodb_data:/bitnami/mongodb'
