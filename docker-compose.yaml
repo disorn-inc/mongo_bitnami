@@ -19,6 +19,7 @@ services:
   #     - './mongodb_data:/bitnami/mongodb'
   mongodb:
     image: docker.io/bitnami/mongodb:6.0
+    user: "0"
     ports:
       - "27017:27017"
     volumes:
