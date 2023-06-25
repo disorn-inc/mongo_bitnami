@@ -3,6 +3,8 @@ version: "3.8"
 services:
   mongodb:
     image: 'bitnami/mongodb:latest'
+    # group_add:
+    #  - 1001:1001
     environment:
       - MONGODB_USERNAME=my_user
       - MONGODB_PASSWORD=password123
@@ -17,3 +19,4 @@ services:
 
 volumes:
   mongodb_data:
+    driver: local
